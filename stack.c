@@ -13,20 +13,20 @@ Stack* new_stack(void)
 	Stack* stack = (Stack*) malloc(sizeof(Stack));
 
 	if (stack == NULL) {
-        fprintf(stderr, "\nError: Call to malloc() failed");
-        return NULL;
+        	fprintf(stderr, "\nError: Call to malloc() failed");
+        	return NULL;
 	}
 
-    stack->index = -1;
-    stack->max_size = 8;
-    stack->array = (int*) malloc(stack->max_size * sizeof(int));
+	stack->index = -1;
+	stack->max_size = 8;
+        stack->array = (int*) malloc(stack->max_size * sizeof(int));
 
-    if (stack->array == NULL) {
-        fprintf(stderr, "\nError: Call to malloc() failed");
-        return NULL;
-	}
+        if (stack->array == NULL) {
+        	fprintf(stderr, "\nError: Call to malloc() failed");
+        	return NULL;
+        }
 
-	return stack;
+        return stack;
 }
 
 // Resets the stack back to an empty stack
@@ -61,7 +61,7 @@ int push(Stack* stack, int elem)
         }
     }
 
-    stack->index++;
+    	stack->index++;
 	stack->array[stack->index] = elem;
 	return 1;
 }
@@ -81,11 +81,11 @@ int pop(Stack* stack, int* success)
         return NULL;
     }
 
-	int return_val = stack->array[stack->index];
+    int return_val = stack->array[stack->index];
     stack->index--;
 
     *success = 1;
-	return return_val;
+    return return_val;
 }
 
 // Retrieves most recent element added to Stack, but doesn't remove it. Variable success set to 1 if operation succeeds, 0 if it fails

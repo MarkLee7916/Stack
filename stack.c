@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include "stack.h"
 
-int isEmpty(const Stack* s)
-{
-    return size(s) == 0;
-}
-
 // Dynamically creates a new Stack. Returns NULL if malloc() call fails
 Stack* new_stack(void)
 {
@@ -34,6 +29,12 @@ void clear(Stack* stack)
 {
     stack->index = -1;
 }
+
+int isEmpty(const Stack* s)
+{
+    return size(s) == 0;
+}
+
 
 // Frees allocated memory and nulls out the heap pointers
 void destroy_stack(Stack* stack)

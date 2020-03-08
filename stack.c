@@ -2,32 +2,6 @@
 #include <stdlib.h>
 #include "stack.h"
 
-int main(void)
-{
-    Stack* s = new_stack();
-    int a = 1;
-    int buffer;
-
-    for (int i = 0; i < 100; i++) {
-        if (push(s, i) == 0)
-            puts("push failure");
-
-        buffer = peek(s, &a);
-        printf("\n%i", buffer);
-        if (a == 0)
-            puts("peek failure");
-
-        buffer = pop(s, &a);
-        printf("\n%i", buffer);
-        if (a == 0)
-            puts("pop failure");
-    }
-
-    destroy_stack(s);
-
-    return 1;
-}
-
 int isEmpty(const Stack* s)
 {
     return size(s) == 0;

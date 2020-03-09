@@ -44,7 +44,7 @@ void destroy_stack(Stack* stack)
     stack = NULL;
 }
 
-// Pushes element on top of Stack. If it doesn't fit in the array, allocates a new array and moves contents into it
+// Pushes element on top of Stack. If it doesn't fit in the array, allocates a new array and moves contents into it. Returns 1 if successful and 0 if it fails
 int push(Stack* stack, int elem)
 {
     int* buffer;
